@@ -1,6 +1,6 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) The SQL Ladder Challenge
 
-# :siren: THIS IS A BETA TEST :siren:
+# :boom: THIS IS A BETA TEST :boom:
 I hope you enjoy this brand new, much-requested ladder challenge! You are the first group of students to lay eyes on it. Actually, you're the first people to see it besides me (Tim). As you go through this challenge, please report _ANYTHING_ that needs to be fixed to me, even the smallest typo!
 
 # Climb the Ladder!
