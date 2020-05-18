@@ -65,14 +65,14 @@ The `sqlite3` library has been installed with Anaconda on your machine already. 
 import sqlite3
 import pandas as pd
 
-conn = sqlite.connect("ladder.db")
+conn = sqlite3.connect("ladder.db")
 pd.read_sql("SELECT * FROM mytable;", conn)
 ```
 
 To execute non-`SELECT` statements, you cannot use Pandas. You'll need to execute a squery on a cursor of the connection and then commit it. For example:
 
 ```python
-conn = sqlite.connect("ladder.db")
+conn = sqlite3.connect("ladder.db")
 cur = conn.cursor()
 cur.execute("SOME QUERY")
 conn.commit()
