@@ -1,8 +1,5 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) The SQL Ladder Challenge
 
-# :boom: THIS IS A BETA TEST :boom:
-I hope you enjoy this brand new, much-requested ladder challenge! You are the first group of students to lay eyes on it. Actually, you're the first people to see it besides me (Tim). As you go through this challenge, please report _ANYTHING_ that needs to be fixed to me, even the smallest typo!
-
 # Climb the Ladder!
 Our class moves quickly! SQL is important, and we'd like to give it the time and attention it deserves. Starting with the `01` file, we've provided several SQL problems that get progressively harder. They start trivial, and build into some serious head-scratchers. The progression is itended to be smooth, so the next rung of the ladder is always within reach!
 
