@@ -1,7 +1,7 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) The SQL Ladder Challenge
 
 # Climb the Ladder!
-Our class moves quickly! SQL is important, and we'd like to give it the time and attention it deserves. Starting with the `01` file, we've provided several SQL problems that get progressively harder. They start trivial, and build into some serious head-scratchers. The progression is itended to be smooth, so the next rung of the ladder is always within reach!
+Our class moves quickly! SQL is important, and we'd like to give it the time and attention it deserves. Starting with the `01` file, we've provided several SQL problems that get progressively harder. They start trivial, and build into some serious head-scratchers. The progression is intended to be smooth, so the next rung of the ladder is always within reach!
 
 # Contents
 You are provided with a SQLite database, `ladder.db`. You may find instructions on how to execute SQL queries on it below.
