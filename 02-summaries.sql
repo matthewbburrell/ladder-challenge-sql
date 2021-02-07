@@ -84,20 +84,84 @@ select '$' || printf('%,d' ,avg(salary)) as 'Mean Salary in USD', printf('%,d', 
 
 -----------------------------------------------------------------------------------------Aggregating Statistics with GROUP BY-----------------------------------------------------------------------------------------------------
 --45) What is the average age of `pets` by species?
+
+select species, round(avg(age), 2) as 'Average Age' 
+from pets
+group by species;
+
 --46) Repeat the previous problem but make sure the species label is also displayed! Assume this behavior is always being asked of you any time you use `GROUP BY`.
+
+---I already did that above because it didn't look right> I did not read head while answering the questions.
+
 --47) What is the count, mean, minimum, and maximum age by species in `pets`?
+
+select species, count(species) 'Number of animals', round(avg(age), 2) as 'Mean Age', min(age) as 'Min Age', max(age) as 'Max Age'
+from pets
+group by species;
+
 --48) Show the mean salaries of each job title in `employees`.
+
+select job as 'Job Type',round(avg(salary), 2)
+from employees
+group by job;
+
+
 --49) Show the mean salaries in New Zealand dollars of each job title in `employees`.
 --    * _NOTE:_ 1 USD = 1.65 NZD.
+
+select job as 'Job Type', round(avg(cast(salary * 1.65 as NZD)), 2) as 'New Zealand dollars'
+from employees
+group by job;
+
 --50) Show the mean, min, and max salaries of each job title in `employees`, as well as the numbers of employees in each category.
+
+select job as 'Job Type',round(avg(salary), 2), min(salary) as 'Min salary', max(salary) as 'Max salary', count(job) as 'Number of Job Types'
+from employees
+group by job;
+
+
 --51) Show the mean salaries of each job title in `employees` sorted descending by salary.
+
+select job as 'Job Type',round(avg(salary), 2)
+from employees
+group by job
+order by round(avg(salary), 2) desc;
+
 --52) What are the top 5 most common first names among `employees`?
+
+select firstname
+from employees
+group by firstname
+order by count(firstname) desc
+limit 5;
+
 --53) Show all first names which have exactly 2 occurrences in `employees`.
---54) Take a look at the `transactions` table to get a idea of what it contains. Note that a transaction may span multiple rows if different items are purchased as part of the same order. The employee who made the order is also given by their ID.
+
+select firstname
+from employees
+group by firstname
+having count(firstname) = 2;
+
+--54) Take a look at the `transactions` table to get a idea of what it contains. Note that a transaction may span multiple rows if different items are purchased as part of the same order. 
+--The employee who made the order is also given by their ID.
+
+select *
+from transactions;
+
 --55) Show the top 5 largest orders (and their respective customer) in terms of the numbers of items purchased in that order.
+
+select order_id, customer
+from transactions
+group by order_id
+order by sum(quantity) desc
+limit 5;
+
 --56) Show the total cost of each transaction.
 --    * _Hint:_ The `unit_price` column is the price of _one_ item. The customer may have purchased multiple.
 --    * _Hint2:_ Note that transactions here span multiple rows if different items are purchased.
+
+
+
 --57) Show the top 5 transactions in terms of total cost.
 --58) Show the top 5 customers in terms of total revenue (ie, which customers have we done the most business with in terms of money?)
 --59) Show the top 5 employees in terms of revenue generated (ie, which employees made the most in sales?)
