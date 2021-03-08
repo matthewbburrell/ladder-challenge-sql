@@ -160,11 +160,47 @@ limit 5;
 --    * _Hint:_ The `unit_price` column is the price of _one_ item. The customer may have purchased multiple.
 --    * _Hint2:_ Note that transactions here span multiple rows if different items are purchased.
 
-
+select order_id, customer, cast(unit_price * quantity as total_cost) as total_cost
+from transactions
+group by order_id;
 
 --57) Show the top 5 transactions in terms of total cost.
+
+select order_id, customer, cast(unit_price * quantity as total_cost) as total_cost
+from transactions
+group by order_id
+order by total_cost desc
+limit 5;
+
 --58) Show the top 5 customers in terms of total revenue (ie, which customers have we done the most business with in terms of money?)
+
+select customer, sum(cast(unit_price * quantity as total_cost)) as total_revenue
+from transactions
+group by customer
+order by total_revenue desc
+limit 5;
+
 --59) Show the top 5 employees in terms of revenue generated (ie, which employees made the most in sales?)
+
+select employee_id ,sum(cast(unit_price * quantity as total_cost)) as total_revenue
+from transactions
+group by employee_id
+order by total_revenue desc
+limit 5;
+
 --60) Which customer worked with the largest number of employees?
 --    * _Hint:_ This is a tough one! Check out the `DISTINCT` keyword.
+
+select customer, count(employee_id) as 'number of employees'
+from transactions
+group by customer
+order by count(employee_id) desc
+limit 1;
+
 --61) Show all customers who've done more than $80,000 worth of business with us.
+
+select customer, sum(cast(unit_price * quantity as total_revenue)) as total_revenue
+from transactions
+group by customer
+having total_revenue > 80000;
+
